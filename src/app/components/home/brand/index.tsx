@@ -1,28 +1,9 @@
-'use client'
-import Slider from 'react-infinite-logo-slider'
-import SingleBrand from './SingleBrand'
-import { useEffect, useState } from 'react';
+"use client";
 
 function Brand() {
-  const [brandList, setbrandList] = useState<any>(null);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch('/api/page-data')
-        if (!res.ok) throw new Error('Failed to fetch')
-
-        const data = await res.json()
-        setbrandList(data?.brandList || [])
-      } catch (error) {
-        console.error('Error fetching services:', error)
-      }
-    }
-    fetchData()
-  }, [])
-
   return (
     <section>
-      <div className='2xl:py-20 py-11'>
+      {/* <div className='2xl:py-20 py-11'>
         <div className='container'>
           <div className='gap-4'>
             <div className='flex justify-center text-center py-4 relative'>
@@ -48,9 +29,9 @@ function Brand() {
             )}
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
-  )
+  );
 }
 
-export default Brand
+export default Brand;

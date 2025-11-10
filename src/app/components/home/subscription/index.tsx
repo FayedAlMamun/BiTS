@@ -1,28 +1,9 @@
 "use client";
-import Image from 'next/image'
-import Link from 'next/link'
-import { useEffect, useState } from 'react';
 
 function Subscription() {
-  const [startupPlanList, setstartupPlanList] = useState<any>(null);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch('/api/page-data')
-        if (!res.ok) throw new Error('Failed to fetch')
-
-        const data = await res.json()
-        setstartupPlanList(data?.startupPlanList)
-      } catch (error) {
-        console.error('Error fetching services:', error)
-      }
-    }
-
-    fetchData()
-  }, [])
   return (
-    <section id='pricing'>
-      <div className='2xl:py-20 py-11'>
+    <section id="pricing">
+      {/* <div className='2xl:py-20 py-11'>
         <div className='container'>
           <div className='flex flex-col gap-10 md:gap-20'>
             <div className='max-w-25 text-center mx-auto'>
@@ -112,9 +93,9 @@ function Subscription() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
-  )
+  );
 }
 
-export default Subscription
+export default Subscription;

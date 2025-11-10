@@ -1,38 +1,9 @@
-'use client'
-import { useEffect, useRef, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
-import SingleAchievement from './SingleAchievement'
+"use client";
 
 function Achievements() {
-  const ref = useRef(null)
-  const inView = useInView(ref)
-  const [achievementsList, setAchievementsList] = useState<any>(null);
-
-  useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const res = await fetch('/api/page-data')
-          if (!res.ok) throw new Error('Failed to fetch')
-  
-          const data = await res.json()
-          setAchievementsList(data?.achievementsList)
-        } catch (error) {
-          console.error('Error fetching services:', error)
-        }
-      }
-  
-      fetchData()
-    }, [])
-
-  const bottomAnimation = (index: any) => ({
-    initial: { y: '5%', opacity: 0 },
-    animate: inView ? { y: 0, opacity: 1 } : { y: '10%', opacity: 0 },
-    transition: { duration: 0.4, delay: 0.4 + index * 0.3 },
-  })
-
   return (
-    <section id='awards'>
-      <div ref={ref} className='2xl:py-20 py-11'>
+    <section id="awards">
+      {/* <div ref={ref} className='2xl:py-20 py-11'>
         <div className='container'>
           <div className='flex flex-col gap-10 md:gap-20'>
             <div className='max-w-3xl text-center mx-auto'>
@@ -54,9 +25,9 @@ function Achievements() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
-  )
+  );
 }
 
-export default Achievements
+export default Achievements;
