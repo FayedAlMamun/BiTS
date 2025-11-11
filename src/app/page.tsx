@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Brand from "./components/home/brand";
 import CustomerStories from "./components/home/customer-stories";
 import Faq from "./components/home/faq";
 import HeroSection from "./components/home/hero";
@@ -20,7 +19,6 @@ export default function Home() {
       {/* ---------------------Hero section Ends-----------------  */}
 
       {/* ---------------------Brand logo section Starts-----------------  */}
-      <Brand />
       {/* ---------------------Brand logo section Ends-----------------  */}
 
       {/* ---------------------Web result section Starts-----------------  */}
